@@ -11,7 +11,7 @@ constraint active_cq check(active in('y','n'))
   
 );
 insert into book(book_ID,book_name,author_name,price,publisher, catogory,active)
-values (2016,'the mystry', 'swathuu',420,' chin','books','y');
+values (2016,'the mystry', 'anbu',420,' chin','books','y');
    create table orders(
    order_id int not null primary key,
    username varchar2(100),
