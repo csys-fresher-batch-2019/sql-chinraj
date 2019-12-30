@@ -10,11 +10,11 @@ Query:
 ```
 drop table booklist;
 create table booklist( 
-   book_id int  primary key,
+   book_id number  primary key,
    book_name varchar2(100) not null,
-	pages int  not null,
+	pages number  not null,
    author_name varchar2(100) not null,
-   price int not null,
+   price number not null,
    constraints pages_cq check(pages>0),
    constraint price_cq check (price>=0)
    );
