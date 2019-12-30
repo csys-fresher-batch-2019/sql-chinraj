@@ -8,7 +8,7 @@
 Query:
 
 ```
-drop table booklist;
+
 create table booklist( 
    book_id number  primary key,
    book_name varchar2(100) not null,
