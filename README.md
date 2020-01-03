@@ -129,7 +129,7 @@ set bl.books_available=bl.books_available-(select bs.books_taken from book_summa
 where book_id=(select book_id from book_summary where book_id=bl.book_id); 
 ```
 
-```
+```sql
 ----while returning book of particular student----
 update booklist bl
 set bl.books_available=(bl.books_available+1)
