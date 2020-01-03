@@ -32,7 +32,7 @@ create table booklist(
    values (1004,'POM',365,'Jazz',500,50); 
 
     select * from booklist
-```  
+
 | BOOK_ID | BOOK_NAME | BOOKS_AVAILABLE | PAGES | AUTHOR_NAME | PRICE |   
 |---------|-----------|-----------------|-------|-------------|-------|
 | 1000    | SOM       | 50              | 460   | Senthil     | 500   |   
@@ -40,7 +40,7 @@ create table booklist(
 | 1002    | DTS       | 50              | 434   | Senthil     | 500   |   
 | 1003    | DOM       | 50              | 412   | Kesava      | 500   |   
 | 1004    | POM       | 50              | 365   | Jazz        | 500   |   
-
+```
 ```sql
 ----creating book_summary
    create table book_summary(
@@ -81,7 +81,6 @@ update book_summary
 set fines=0 , no_of_extra_days=0
 where trunc( sysdate-due_date) <=0;
 
-```
 | STUDENT_NAME | DEPT_NAME | BOOK_NAME | BORROWED_DATE | DUE_DATE  | NO_OF_EXTRA_DAYS | FINES | CATAGORY    | BOOKS_TAKEN |
 |--------------|-----------|-----------|---------------|-----------|------------------|-------|-------------|-------------|
 | Anbu         | ECE       | SOM       | 10-OCT-19     | 20-DEC-19 | 14               | 28    | Mech        | 1           |
@@ -159,10 +158,11 @@ on s.student_id=bs.student_id
  ---for particular date how many students took book----
 select student_id, book_id, borrowed_date,due_date,catagory,books_taken from book_summary
 where borrowed_date = to_date ('2019-12-10', 'YYYY-MM-DD');
-```
+
 |STUDENT_ID	|BOOK_ID |BORROWED_DATE| DUE_DATE |	CATAGORY    |FINES |  NO_OF_EXTRA_DAYS |	BOOKS_TAKEN|
 |-----------|--------|-------------|----------|-------------|------|-------------------|--------------|
-|49	      | 1004   |10-DEC-19	  |10-JAN-20 |  Programming|	0   |       0           |	0           |
+|49	      | 1004   |10-DEC-19	  |10-JAN-20 |  Programming|	0   |       0           |	1           |
+```
 
 
 
