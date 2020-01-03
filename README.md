@@ -1,10 +1,16 @@
 # LIBRARY MANAGEMENT SYSTEM
 
 ## FEATURES
-   USER SHOULD ABLE TO SEE ALL BOOKS
+ ### Availablity of book
+       After student taken book
+       Before student taken book
+       Fine amount of the student 
+       For a particular date how many books 
+       Student who taken the book on particular  date
+
 
 ### FEATURES 1
-   TO VIEW BOOKS INFORMATIOM
+  Availablity of book
 
 
 ```sql
