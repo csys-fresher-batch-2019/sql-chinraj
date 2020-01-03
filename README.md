@@ -8,6 +8,7 @@
 Query:
 
 ```
+```sql
 create table booklist( 
    book_id number  primary key,
    book_name varchar2(100) not null,
@@ -41,7 +42,7 @@ create table booklist(
 | 1004    | POM       | 50              | 365   | Jazz        | 500   |   
 
 ```
-
+```sql
 ----creating book_summary
    create table book_summary(
    student_id number primary key,
@@ -94,7 +95,7 @@ where trunc( sysdate-due_date) <=0;
 | Vijay        | ECE       | DOM       | 10-OCT-19     | 08-DEC-19 | 26               | 52    | ECE      | 1           | 49              |
 +--------------+-----------+-----------+---------------+-----------+------------------+-------+----------+-------------+-----------------+
 ```
-
+```sql
 
   create table student (
    student_id number primary key,
