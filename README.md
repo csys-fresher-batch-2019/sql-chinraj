@@ -46,6 +46,7 @@ create table booklist(
 | 1003    | DOM       | 50              | 412   | Kesava      | 500   |   
 | 1004    | POM       | 50              | 365   | Jazz        | 500   |   
 ```
+## FEATURE 2 BOOK SUMMARIZATION
 ```sql
 ----creating book_summary
    create table book_summary(
