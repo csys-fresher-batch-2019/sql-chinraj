@@ -131,6 +131,13 @@ update booklist bl
 set bl.books_available=bl.books_available-(select bs.books_taken from book_summary bs where bs.book_id=bl.book_id)
 where book_id=(select book_id from book_summary where book_id=bl.book_id); 
 ```
+| STUDENT_NAME | DEPT_NAME | BOOK_NAME | BORROWED_DATE | DUE_DATE  | RETURN_DATE | NO_OF_EXTRA_DAYS | FINES | CATAGORY    | BOOKS_TAKEN | BOOKS_AVAILABLE |
+|--------------|-----------|-----------|---------------|-----------|-------------|------------------|-------|-------------|-------------|-----------------|
+| Anbu         | ECE       | SOM       | 10-OCT-19     | 20-DEC-19 | 03-JAN-20   | 14               | 28    | Mech        | 1           | 49              |
+| Veera        | EEE       | KOM       | 10-OCT-19     | 10-DEC-19 | 03-JAN-20   | 24               | 48    | Comic       | 1           | 49              |
+| Kesav        | MECH      | DTS       | 10-OCT-19     | 02-DEC-19 | 03-JAN-20   | 32               | 64    | Journals    | 1           | 49              |
+| Vijay        | ECE       | DOM       | 10-OCT-19     | 08-DEC-19 | 03-JAN-20   | 26               | 52    | ECE         | 1           | 49              |
+| Chin         | CSE       | POM       | 10-DEC-19     | 10-JAN-20 | 03-JAN-20   | 0                | 0     | Programming | 1           | 49              |
 ```
 ----while returning book of particular student----
 update booklist bl
@@ -140,6 +147,13 @@ update book_summary bs
 set bs.books_taken= (books_taken-1)
 where student_id=49; 
 ```
+| STUDENT_NAME | DEPT_NAME | BOOK_NAME | BORROWED_DATE | DUE_DATE  | RETURN_DATE | NO_OF_EXTRA_DAYS | FINES | CATAGORY    | BOOKS_TAKEN | BOOKS_AVAILABLE |
+|--------------|-----------|-----------|---------------|-----------|-------------|------------------|-------|-------------|-------------|-----------------|
+| Anbu         | ECE       | SOM       | 10-OCT-19     | 20-DEC-19 | 03-JAN-20   | 14               | 28    | Mech        | 1           | 49              |
+| Veera        | EEE       | KOM       | 10-OCT-19     | 10-DEC-19 | 03-JAN-20   | 24               | 48    | Comic       | 1           | 49              |
+| Kesav        | MECH      | DTS       | 10-OCT-19     | 02-DEC-19 | 03-JAN-20   | 32               | 64    | Journals    | 1           | 49              |
+| Vijay        | ECE       | DOM       | 10-OCT-19     | 08-DEC-19 | 03-JAN-20   | 26               | 52    | ECE         | 1           | 49              |
+| Chin         | CSE       | POM       | 10-DEC-19     | 10-JAN-20 | 03-JAN-20   | 0                | 0     | Programming | 0           | 50              |
 ```
 select student_name,dept_name,book_name,borrowed_date,due_date,return_date,no_of_extra_days,fines,catagory, books_taken,books_available from booklist bl
 inner join book_summary bs
@@ -152,8 +166,12 @@ on s.student_id=bs.student_id
  ---for particular date how many students took book----
 select *from book_summary
 where borrowed_date = to_date ('2019-12-10', 'YYYY-MM-DD');
-
 ```
+|STUDENT_ID	|BOOK_ID |BORROWED_DATE| DUE_DATE |	RETURN_DATE |	CATAGORY   |FINES |  NO_OF_EXTRA_DAYS |	BOOKS_TAKEN|
+|-----------|--------|-------------|----------|-------------|-------------|------|-------------------|--------------|
+|49	      | 1004   |10-DEC-19	  |10-JAN-20 | 03-JAN-20	|  Programming|	0	| 0                 |	0          |
+
+
 
 
 
