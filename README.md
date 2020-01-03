@@ -41,7 +41,6 @@ create table booklist(
 | 1003    | DOM       | 50              | 412   | Kesava      | 500   |   
 | 1004    | POM       | 50              | 365   | Jazz        | 500   |   
 
-```
 ```sql
 ----creating book_summary
    create table book_summary(
@@ -90,10 +89,8 @@ where trunc( sysdate-due_date) <=0;
 | Kesav        | MECH      | DTS       | 10-OCT-19     | 02-DEC-19 | 32               | 64    | Journals    | 1           |
 | Vijay        | ECE       | DOM       | 10-OCT-19     | 08-DEC-19 | 26               | 52    | ECE         | 1           |
 | Chin         | CSE       | POM       | 10-DEC-19     | 10-JAN-20 | 0                | 0     | Programming | 1           |
-
 ```
 ```sql
-
   create table student (
    student_id number primary key,
     book_id number not null,
@@ -115,7 +112,7 @@ where trunc( sysdate-due_date) <=0;
  
 select * from student
 
-```
+```sql
 | STUDENT_ID | BOOK_ID | STUDENT_NAME | DEPT_NAME | 
 |------------|---------|--------------|-----------|
 | 45         | 1000    | Anbu         | ECE       | 
@@ -124,7 +121,7 @@ select * from student
 | 48         | 1003    | Vijay        | ECE       | 
 | 49         | 1004    | Chin         | CSE       | 
 
-```
+```sql
 
 ------while borrowing book-----
 ----- to view availablity after book taken
@@ -134,7 +131,7 @@ set bl.books_available=bl.books_available-(select bs.books_taken from book_summa
 where book_id=(select book_id from book_summary where book_id=bl.book_id); 
 ```
 
-
+1```
 ----while returning book of particular student----
 update booklist bl
 set bl.books_available=(bl.books_available+1)
@@ -143,22 +140,22 @@ update book_summary bs
 set bs.books_taken= (books_taken-1)
 where student_id=49; 
 ```
+
 | STUDENT_NAME | DEPT_NAME | BOOK_NAME | BORROWED_DATE | DUE_DATE  | NO_OF_EXTRA_DAYS | FINES | CATAGORY    | BOOKS_TAKEN |
 |--------------|-----------|-----------|---------------|-----------|------------------|-------|-------------|-------------|
 | Anbu         | ECE       | SOM       | 10-OCT-19     | 20-DEC-19 | 14               | 28    | Mech        | 1           |
 | Veera        | EEE       | KOM       | 10-OCT-19     | 10-DEC-19 | 24               | 48    | Comic       | 1           |
 | Kesav        | MECH      | DTS       | 10-OCT-19     | 02-DEC-19 | 32               | 64    | Journals    | 1           |
 | Vijay        | ECE       | DOM       | 10-OCT-19     | 08-DEC-19 | 26               | 52    | ECE         | 1           |
-| Chin         | CSE       | POM       | 10-DEC-19     | 10-JAN-20 | 0                | 0     | Programming | 0           |                     |
-```
+| Chin         | CSE       | POM       | 10-DEC-19     | 10-JAN-20 | 0                | 0     | Programming | 0           |             
+
+```sql      |
 select student_name,dept_name,book_name,borrowed_date,due_date,return_date,no_of_extra_days,fines,catagory, books_taken,books_available from booklist bl
 inner join book_summary bs
 on bl.book_id=bs.book_id
 inner join student s
 on s.student_id=bs.student_id
 
-```
-```
  ---for particular date how many students took book----
 select student_id, book_id, borrowed_date,due_date,catagory,books_taken from book_summary
 where borrowed_date = to_date ('2019-12-10', 'YYYY-MM-DD');
