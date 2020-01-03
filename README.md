@@ -5,9 +5,8 @@
 
 ### FEATURES 1
    TO VIEW BOOKS INFORMATIOM
-Query:
 
-```
+
 ```sql
 create table booklist( 
    book_id number  primary key,
@@ -130,7 +129,7 @@ set bl.books_available=bl.books_available-(select bs.books_taken from book_summa
 where book_id=(select book_id from book_summary where book_id=bl.book_id); 
 ```
 
-1```
+```
 ----while returning book of particular student----
 update booklist bl
 set bl.books_available=(bl.books_available+1)
@@ -138,7 +137,6 @@ where book_id=1004;
 update book_summary bs
 set bs.books_taken= (books_taken-1)
 where student_id=49; 
-```
 
 | STUDENT_NAME | DEPT_NAME | BOOK_NAME | BORROWED_DATE | DUE_DATE  | NO_OF_EXTRA_DAYS | FINES | CATAGORY    | BOOKS_TAKEN |
 |--------------|-----------|-----------|---------------|-----------|------------------|-------|-------------|-------------|
