@@ -26,25 +26,25 @@ create table booklist(
    );
    
   insert into booklist(book_id,book_name,pages,author_name,price,books_available)
-   values (1000,'SOM',460,'Senthil',500,50);
+   values (1000,'SOM',40,'Senthil',500,50);
     insert into booklist(book_id,book_name,pages,author_name,price,books_available)
-   values (1001,'KOM',476,'Sundar',500,50);
+   values (1001,'KOM',46,'Sundar',500,50);
     insert into booklist(book_id,book_name,pages,author_name,price,books_available)
-   values (1002,'DTS',434,'Senthil',500,50);
+   values (1002,'DTS',43,'Senthil',500,50);
     insert into booklist(book_id,book_name,pages,author_name,price,books_available)
-   values (1003,'DOM',412,'Kesava',500,50); 
+   values (1003,'DOM',42,'Kesava',500,50); 
      insert into booklist(book_id,book_name,pages,author_name,price,books_available)
-   values (1004,'POM',365,'Jazz',500,50); 
+   values (1004,'POM',65,'Jazz',500,50); 
 
     select * from booklist
 
 | BOOK_ID | BOOK_NAME | BOOKS_AVAILABLE | PAGES | AUTHOR_NAME | PRICE |   
 |---------|-----------|-----------------|-------|-------------|-------|
-| 1000    | SOM       | 50              | 460   | Senthil     | 500   |   
-| 1001    | KOM       | 50              | 476   | Sundar      | 500   |   
-| 1002    | DTS       | 50              | 434   | Senthil     | 500   |   
-| 1003    | DOM       | 50              | 412   | Kesava      | 500   |   
-| 1004    | POM       | 50              | 365   | Jazz        | 500   |   
+| 1000    | SOM       | 50              | 40    | Senthil     | 500   |   
+| 1001    | KOM       | 50              | 46    | Sundar      | 500   |   
+| 1002    | DTS       | 50              | 43    | Senthil     | 500   |   
+| 1003    | DOM       | 50              | 42    | Kesava      | 500   |   
+| 1004    | POM       | 50              | 65    | Jazz        | 500   |   
 ```
 ## FEATURE 2 BOOK SUMMARIZATION
 ```sql
